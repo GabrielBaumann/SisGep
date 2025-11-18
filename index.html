@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>SisGep - SEMSA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="h-screen flex flex-col md:flex-row items-center justify-center bg-gray-100">
+        
+        <div class="h-full w-full md:w-[60vw] md:h-[80vh] overflow-hidden md:rounded-xl md:shadow-xl grid grid-cols-1 md:grid-cols-2">
+            <div class="h-screen md:h-full col-span-1 bg-white flex flex-col justify-center items-center px-12">
+                <form action="" class="flex flex-col gap-4 w-full">
+                    <div class="flex">
+                        <div class="h-[10vh] overflow-hidden mb-6">
+                            <img src="./assets/logo.png" alt="logo" class="w-full h-full object-contain object-center">
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="">CPF</label>
+                        <input type="text" class="border border-gray-400 rounded-md py-3 px-4" placeholder="123.456.789-10">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="">Senha</label>
+                        <input type="text" class="border border-gray-400 rounded-md py-3 px-4" placeholder="**************">
+                    </div>
+                    <div class="flex items-center justify-right gap-2">
+                        <input type="checkbox">
+                        <p>Lembrar Senha</p>
+                    </div>
+                    <a href="./pages/home.html" class="flex items-center justify-center font-semibold cursor-pointer text-white bg-gradient-to-r from-green-800 to-green-950 rounded-md py-3">Entrar</a>
+                    <p class="text-center text-gray-500 mt-12">SisGep - SEMSA. Versão de testes.</p>
+                </form>
+            </div>
+            <div class="col-span-1 overflow-hidden relative"> 
+                <img 
+                    src="./assets/g-cover.jpg" 
+                    alt="cover" 
+                    class="hidden md:block absolute inset-0 w-full h-full object-top object-cover" 
+                >
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
