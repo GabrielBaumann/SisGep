@@ -172,105 +172,301 @@
 
                         </div>
                     </div>
-                    <div class="rounded-md row-span-2 bg-white w-full h-full p-4 gap-4 flex flex-col">
-                        <h1 class="text-xl">Tabela de Servidores</h1>
-                        <div class="bg-gray-100 flex flex-col md:flex-row md:justify-between p-2">
-                            <input type="checkbox">
-                            <h1>Nome</h1>
-                            <h1>CPF</h1>
-                            <h1>Status</h1>
-                            <h1>Opções</h1>
-                        </div>
 
-                        <div class="h-[300px] overflow-y-auto flex flex-col gap-2">
-                            <!-- line -->
-                            <div class="hover:bg-gray-100 flex flex-col md:flex-row md:justify-between p-2">
-                                <input type="checkbox">
-                                <h1>Marcos da Silva</h1>
-                                <h1>123.456.789-10</h1>
-                                <h1 class="py-1 px-2 bg-green-100 rounded-full text-sm">Ativo</h1>
-                                <div class="flex items-center gap-2">
-                                    <a href="./server.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-blue-700">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                        </svg>
-                                    </a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-red-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                    </svg>
-                                </div>
+                    <div class="row-span-2 rounded-xl w-full h-full bg-white p-6 flex flex-col overflow-y-auto">
+                        <!-- Header -->
+                        <!-- <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                            <div>
+                                <h1 class="text-2xl">Tabela de Servidores</h1>
+                                <p class="text-gray-500 text-sm mt-1">Gerencie todos os servidores do sistema</p>
                             </div>
-                            <!-- line -->
-                            <div class="hover:bg-gray-100 flex flex-col md:flex-row md:justify-between p-2">
-                                <input type="checkbox">
-                                <h1>Marcos da Silva</h1>
-                                <h1>123.456.789-10</h1>
-                                <h1 class="py-1 px-2 bg-gray-200 rounded-full text-sm">Inativo</h1>
-                                <div class="flex items-center gap-2">
-                                    <a href="./server.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-blue-700">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                        </svg>
-                                    </a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-red-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <!-- line -->
-                            <div class="hover:bg-gray-100 flex flex-col md:flex-row md:justify-between p-2">
-                                <input type="checkbox">
-                                <h1>Marcos da Silva</h1>
-                                <h1>123.456.789-10</h1>
-                                <h1 class="py-1 px-2 bg-red-100 rounded-full text-sm">Desligado</h1>
-                                <div class="flex items-center gap-2">
-                                    <a href="./server.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-blue-700">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                        </svg>
-                                    </a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-red-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <!-- line -->
-                            <div class="hover:bg-gray-100 flex flex-col md:flex-row md:justify-between p-2">
-                                <input type="checkbox">
-                                <h1>Marcos da Silva</h1>
-                                <h1>123.456.789-10</h1>
-                                <h1 class="py-1 px-2 bg-yellow-100 rounded-full text-sm">Em aguardo</h1>
-                                <div class="flex items-center gap-2">
-                                    <a href="./server.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-blue-700">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                        </svg>
-                                    </a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-red-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <!-- line -->
-                            <div class="hover:bg-gray-100 flex flex-col md:flex-row md:justify-between p-2">
-                                <input type="checkbox">
-                                <h1>Marcos da Silva</h1>
-                                <h1>123.456.789-10</h1>
-                                <h1 class="py-1 px-2 bg-green-100 rounded-full text-sm">Ativo</h1>
-                                <div class="flex items-center gap-2">
-                                    <a href="./server.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-blue-700">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                        </svg>
-                                    </a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 cursor-pointer text-red-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
 
+                        <!-- Table Container -->
+                        <div class="flex flex-col bg-white">
+                            <!-- Table Header -->
+                            <div class="hidden md:grid grid-cols-12 gap-4 px-4 py-3 bg-gradient-to-r from-green-50 to-green-100 rounded-lg border border-green-200 mb-3">
+                                <div class="col-span-1 flex items-center">
+                                    <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                </div>
+                                <div class="col-span-3 font-semibold text-green-800">Nome</div>
+                                <div class="col-span-2 font-semibold text-green-800">CPF</div>
+                                <div class="col-span-2 font-semibold text-green-800">Admissão</div>
+                                <div class="col-span-2 font-semibold text-green-800">Status</div>
+                                <div class="col-span-2 font-semibold text-green-800 text-center">Ações</div>
+                            </div>
+
+                            <!-- Mobile Header (simplified) -->
+                            <div class="md:hidden grid grid-cols-2 gap-2 px-3 py-2 bg-green-50 rounded-lg mb-3">
+                                <div class="font-semibold text-green-800">Servidor</div>
+                                <div class="font-semibold text-green-800 text-right">Status</div>
+                            </div>
+
+                            <!-- Table Body -->
+                            <div class="flex-1 overflow-y-auto space-y-2">
+                                <!-- Row 1 -->
+                                <div class="group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 p-3 md:p-4 rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all duration-200">
+                                    <!-- Mobile Layout -->
+                                    <div class="md:hidden flex justify-between items-start">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                                <h3 class="font-semibold text-gray-900">Marcos da Silva</h3>
+                                            </div>
+                                            <div class="space-y-1 text-sm text-gray-600">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-medium">CPF:</span>
+                                                    <span>123.456.789-10</span>
+                                                </div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-medium">Admissão:</span>
+                                                    <span>27/08/2025</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end gap-2">
+                                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Ativo</span>
+                                            <div class="flex gap-1">
+                                                <button class="p-1 text-blue-600 hover:bg-blue-100 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                                    </svg>
+                                                </button>
+                                                <button class="p-1 text-red-600 hover:bg-red-100 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Desktop Layout -->
+                                    <div class="hidden md:flex col-span-1 items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                    </div>
+                                    <div class="hidden md:flex col-span-3 items-center font-medium text-gray-900">Marcos da Silva</div>
+                                    <div class="hidden md:flex col-span-2 items-center text-gray-600">123.456.789-10</div>
+                                    <div class="hidden md:flex col-span-2 items-center text-gray-600">27/08/2025</div>
+                                    <div class="hidden md:flex col-span-2 items-center">
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Ativo</span>
+                                    </div>
+                                    <div class="hidden md:flex col-span-2 items-center justify-center gap-2">
+                                        <a href="./server.html" class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors group-hover:scale-110" title="Editar">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                            </svg>
+                                        </a>
+                                        <button class="p-2 text-red-600 hover:bg-red-100 rounded-lg transition-colors group-hover:scale-110" title="Excluir">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Additional rows would follow the same pattern -->
+                                <!-- Row 2 (example with different status) -->
+                                <div class="group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 p-3 md:p-4 rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all duration-200">
+                                    <!-- Mobile Layout -->
+                                    <div class="md:hidden flex justify-between items-start">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                                <h3 class="font-semibold text-gray-900">Ana Carolina Souza</h3>
+                                            </div>
+                                            <div class="space-y-1 text-sm text-gray-600">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-medium">CPF:</span>
+                                                    <span>987.654.321-00</span>
+                                                </div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-medium">Admissão:</span>
+                                                    <span>15/03/2024</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end gap-2">
+                                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Férias</span>
+                                            <div class="flex gap-1">
+                                                <button class="p-1 text-blue-600 hover:bg-blue-100 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                                    </svg>
+                                                </button>
+                                                <button class="p-1 text-red-600 hover:bg-red-100 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Desktop Layout -->
+                                    <div class="hidden md:flex col-span-1 items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                    </div>
+                                    <div class="hidden md:flex col-span-3 items-center font-medium text-gray-900">Ana Carolina Souza</div>
+                                    <div class="hidden md:flex col-span-2 items-center text-gray-600">987.654.321-00</div>
+                                    <div class="hidden md:flex col-span-2 items-center text-gray-600">15/03/2024</div>
+                                    <div class="hidden md:flex col-span-2 items-center">
+                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Férias</span>
+                                    </div>
+                                    <div class="hidden md:flex col-span-2 items-center justify-center gap-2">
+                                        <a href="./server.html" class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors group-hover:scale-110" title="Editar">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                            </svg>
+                                        </a>
+                                        <button class="p-2 text-red-600 hover:bg-red-100 rounded-lg transition-colors group-hover:scale-110" title="Excluir">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- Row 1 -->
+                                <div class="group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 p-3 md:p-4 rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all duration-200">
+                                    <!-- Mobile Layout -->
+                                    <div class="md:hidden flex justify-between items-start">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                                <h3 class="font-semibold text-gray-900">Marcos da Silva</h3>
+                                            </div>
+                                            <div class="space-y-1 text-sm text-gray-600">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-medium">CPF:</span>
+                                                    <span>123.456.789-10</span>
+                                                </div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-medium">Admissão:</span>
+                                                    <span>27/08/2025</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end gap-2">
+                                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Ativo</span>
+                                            <div class="flex gap-1">
+                                                <button class="p-1 text-blue-600 hover:bg-blue-100 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                                    </svg>
+                                                </button>
+                                                <button class="p-1 text-red-600 hover:bg-red-100 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Desktop Layout -->
+                                    <div class="hidden md:flex col-span-1 items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                    </div>
+                                    <div class="hidden md:flex col-span-3 items-center font-medium text-gray-900">Marcos da Silva</div>
+                                    <div class="hidden md:flex col-span-2 items-center text-gray-600">123.456.789-10</div>
+                                    <div class="hidden md:flex col-span-2 items-center text-gray-600">27/08/2025</div>
+                                    <div class="hidden md:flex col-span-2 items-center">
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Ativo</span>
+                                    </div>
+                                    <div class="hidden md:flex col-span-2 items-center justify-center gap-2">
+                                        <a href="./server.html" class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors group-hover:scale-110" title="Editar">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                            </svg>
+                                        </a>
+                                        <button class="p-2 text-red-600 hover:bg-red-100 rounded-lg transition-colors group-hover:scale-110" title="Excluir">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Additional rows would follow the same pattern -->
+                                <!-- Row 2 (example with different status) -->
+                                <div class="group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 p-3 md:p-4 rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all duration-200">
+                                    <!-- Mobile Layout -->
+                                    <div class="md:hidden flex justify-between items-start">
+                                        <div class="flex-1">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                                <h3 class="font-semibold text-gray-900">Ana Carolina Souza</h3>
+                                            </div>
+                                            <div class="space-y-1 text-sm text-gray-600">
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-medium">CPF:</span>
+                                                    <span>987.654.321-00</span>
+                                                </div>
+                                                <div class="flex items-center gap-2">
+                                                    <span class="font-medium">Admissão:</span>
+                                                    <span>15/03/2024</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end gap-2">
+                                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Férias</span>
+                                            <div class="flex gap-1">
+                                                <button class="p-1 text-blue-600 hover:bg-blue-100 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                                    </svg>
+                                                </button>
+                                                <button class="p-1 text-red-600 hover:bg-red-100 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Desktop Layout -->
+                                    <div class="hidden md:flex col-span-1 items-center">
+                                        <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                                    </div>
+                                    <div class="hidden md:flex col-span-3 items-center font-medium text-gray-900">Ana Carolina Souza</div>
+                                    <div class="hidden md:flex col-span-2 items-center text-gray-600">987.654.321-00</div>
+                                    <div class="hidden md:flex col-span-2 items-center text-gray-600">15/03/2024</div>
+                                    <div class="hidden md:flex col-span-2 items-center">
+                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Férias</span>
+                                    </div>
+                                    <div class="hidden md:flex col-span-2 items-center justify-center gap-2">
+                                        <a href="./server.html" class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors group-hover:scale-110" title="Editar">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                            </svg>
+                                        </a>
+                                        <button class="p-2 text-red-600 hover:bg-red-100 rounded-lg transition-colors group-hover:scale-110" title="Excluir">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Table Footer -->
+                            <div class="flex flex-col sm:flex-row justify-between items-center pt-4 mt-4 border-t border-gray-200">
+                                <div class="text-sm text-gray-600 mb-3 sm:mb-0">
+                                    Mostrando <span class="font-semibold">2</span> de <span class="font-semibold">1.237</span> servidores
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button class="px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm">Anterior</button>
+                                    <button class="px-3 py-1 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">1</button>
+                                    <button class="px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm">2</button>
+                                    <button class="px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm">3</button>
+                                    <button class="px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm">Próximo</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -280,5 +476,36 @@
             <p>SisGep - SEMSA. Versão de Testes</p>
         </footer>   
     </div>
+
+    <script>
+        // Adiciona animação de entrada para as linhas da tabela
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.group');
+            
+            rows.forEach((row, index) => {
+                row.style.opacity = '0';
+                row.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    row.style.transition = 'all 0.5s ease';
+                    row.style.opacity = '1';
+                    row.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            // Adiciona efeito de hover mais suave
+            rows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
