@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>SisGep - SEMSA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: rgb(242, 243, 243);
+        }
+
+        .card-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .card-fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .card-fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .card-fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .card-fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .card-fade-in:nth-child(5) { animation-delay: 0.5s; }
+        .card-fade-in:nth-child(6) { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- All -->
+    <div class="h-screen mx-auto max-w-[1200px] flex flex-col justify-between p-2 gap-2">
+
+        <!-- Main header -->
+        <header class="px-3 py-1 flex items-center rounded-md justify-between bg-white">
+            <div class="h-[7vh] overflow-hidden">
+                <img src="../assets/logo.png" alt="logo" class="w-full h-full object-contain object-center">
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="" class="hidden md:flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                    <span>Configurações</span>
+                </a>
+
+                <a href="" class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                    </svg>
+                    <span class="hidden md:flex">Notificações</span>
+                </a>
+
+                <div class="h-[5vh] w-[5vh] overflow-hidden rounded-full">
+                    <img src="../assets/profile.avif" alt="logo" class="w-full h-full object-cover object-center">
+                </div>
+
+                <a href="../index.html" class="flex items-center gap-2 text-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M16.5 3.75a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5V15a.75.75 0 0 0-1.5 0v3.75a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5.25a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3V9A.75.75 0 1 0 9 9V5.25a1.5 1.5 0 0 1 1.5-1.5h6ZM5.78 8.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 0 0 0 1.06l3 3a.75.75 0 0 0 1.06-1.06l-1.72-1.72H15a.75.75 0 0 0 0-1.5H4.06l1.72-1.72a.75.75 0 0 0 0-1.06Z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </header>
+
+        <main class="h-full overflow-y-auto flex gap-2 w-full">
+            <aside class="bg-white rounded-md hidden md:flex h-full overflow-y-auto w-[350px] flex flex-col gap-4 justify-top p-4">
+                <div class="flex flex-col gap-3">
+                    <h1 class="uppercase text-light text-gray-500">cadastros</h1>
+                    <a href="./home.html" class="flex items-center gap-2 font-semibold py-2 rounded-md px-6 text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
+                        </svg>
+                        <span>Início</span>
+                    </a>
+                    <a href="./integrated-managment.html" class="flex items-center gap-2 font-semibold py-2 rounded-xl px-6 bg-green-900 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
+                        </svg>
+                        <span>Gestão integrada</span>
+                    </a>
+                    <a href="./servers.html" class="flex items-center gap-2 font-semibold py-2 rounded-md px-6 text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                        </svg>
+                        <span>Servidores</span>
+                    </a>
+                </div>
+                <div class="flex flex-col gap-3 ">
+                    <h1 class="uppercase text-light text-gray-500">consultas/impressões</h1>
+                    <a href="" class="flex items-center font-semibold gap-2 py-2 rounded-md px-6 text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                        </svg>
+                        <span>Folha / Ponto</span>
+                    </a>
+                    <a href="" class="flex items-center font-semibold gap-2 py-2 rounded-md px-6 text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                        <span>Concessões</span>
+                    </a>
+                    <a href="" class="flex items-center font-semibold gap-2 py-2 rounded-md px-6 text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+                        </svg>
+                        <span>Licenças</span>
+                    </a>
+                    <a href="" class="flex items-center font-semibold gap-2 py-2 rounded-md px-6 text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                        </svg>
+                        <span>Absenteísmo</span>
+                    </a>
+                    <a href="" class="flex items-center font-semibold gap-2 py-2 rounded-md px-6 text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <span>Horas</span>
+                    </a>
+                    <a href="" class="flex items-center font-semibold gap-2 py-2 rounded-md px-6 text-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z" />
+                        </svg>
+                        <span>Dimensionamento</span>
+                    </a>
+                </div>
+            </aside>
+
+            <div class="overflow-y-auto  bg-white rounded-md p-4 w-full">
+                <header class="py-4 flex flex-col md:flex-row items-center gap-3">
+                    <button class="w-full md:w-auto rounded-xl bg-green-600 py-2 px-3 flex items-center gap-1 text-white cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        <span>Novo</span>
+                    </button>
+                    <button class="w-full md:w-auto rounded-xl bg-blue-600 py-2 px-3 flex items-center gap-1 text-white cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" />
+                        </svg>
+                        <span></span>
+                        <span>Salvar</span>
+                    </button>
+                    <button class="w-full md:w-auto rounded-xl bg-red-400 py-2 px-3 flex items-center gap-1 text-white cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                        </svg>
+                        <span>Excluir</span>
+                    </button>
+                    <button class="w-full md:w-auto rounded-xl bg-yellow-400 py-2 px-3 flex items-center gap-1 text-gray-800 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m0-3-3-3m0 0-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-.75" />
+                        </svg>
+                        <span>Atualizar</span>
+                        span
+                    </button>
+                </header>
+
+                <div class="space-y-6">
+                    <!-- DADOS DO SERVIDOR -->
+                    <section class="bg-white overflow-hidden border border-gray-300 rounded-xl">
+                        <div class="bg-green-200 text-green-800 rounded-t-xl p-4">
+                            <h2 class="text-xl font-bold">DADOS DO SERVIDOR</h2>
+                        </div>
+                        <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-1 gap-3">
+                                    <div class="flex flex-col">
+                                        <span class="font-semibold text-sm text-gray-600">NOME</span>
+                                        <span class="bg-gray-50 px-3 py-2 rounded border border-gray-200 text-gray-800">RAL</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-semibold text-sm text-gray-600">CARGO</span>
+                                        <span class="bg-gray-50 px-3 py-2 rounded border border-gray-200 text-gray-800">RMS_PRESS</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="font-semibold text-sm text-gray-600">FUNÇÃO</span>
+                                        <span class="bg-gray-50 px-3 py-2 rounded border border-gray-200 text-gray-800">RMS_CMC_METENDOR</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-t pt-4">
+                                    <h3 class="font-bold mb-3 text-gray-700">FOLHA DE PAGAMENTO</h3>
+                                    <div class="grid grid-cols-1 gap-2">
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">SALÁRIO BASE</span>
+                                            <span class="text-gray-800 font-medium">R$ 1.000,36</span>
+                                        </div>
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">CARGA HORÁRIA</span>
+                                            <span class="text-gray-800 font-medium">200</span>
+                                        </div>
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">INSALUBRIDADE</span>
+                                            <span class="text-gray-800 font-medium">R$ 322,07</span>
+                                        </div>
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">VALE ALIMENTAÇÃO</span>
+                                            <span class="text-gray-800 font-medium">R$ 1.000,00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <h3 class="font-bold mb-3 text-gray-700">HORAS EXTRAS</h3>
+                                    <div class="grid grid-cols-1 gap-2">
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">HORAS 50%</span>
+                                            <span class="text-gray-800 font-medium">PAG_AHORAS 30</span>
+                                        </div>
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">HORAS 100%</span>
+                                            <span class="text-gray-800 font-medium">PAG_AHORAS 100</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-t pt-4">
+                                    <h3 class="font-bold mb-3 text-gray-700">BENEFÍCIOS</h3>
+                                    <div class="grid grid-cols-1 gap-2">
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">GRATIFICAÇÃO NIVEL SUP.</span>
+                                            <span class="text-gray-800 font-medium">R$ 0,00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ASSENTEÍSMO -->
+                    <section class="bg-white overflow-hidden border border-gray-300 rounded-xl">
+                        <div class="bg-green-200 text-green-800 rounded-t-xl p-4">
+                            <h2 class="text-xl font-bold">ASSENTEÍSMO</h2>
+                        </div>
+                        <div class="p-4">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="space-y-3">
+                                    <div class="font-semibold text-gray-700">LICENÇAS</div>
+                                    <div class="flex flex-col space-y-2">
+                                        <div class="flex flex-col">
+                                            <span class="text-sm text-gray-600">Tipo</span>
+                                            <span class="bg-gray-50 px-3 py-2 rounded border border-gray-200 text-gray-800">RMS_FUGE_VATUS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="font-semibold text-gray-700">PERÍODOS</div>
+                                    <div class="flex flex-col space-y-2">
+                                        <div class="flex flex-col">
+                                            <span class="text-sm text-gray-600">FÉRIAS VENCIDAS</span>
+                                            <span class="bg-gray-50 px-3 py-2 rounded border border-gray-200 text-gray-800">CIDD: OM5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="font-semibold text-gray-700">REGISTROS</div>
+                                    <div class="flex flex-col space-y-2">
+                                        <div class="flex flex-col">
+                                            <span class="text-sm text-gray-600">MOVIMENTAÇÃO</span>
+                                            <span class="bg-gray-50 px-3 py-2 rounded border border-gray-200 text-gray-800">RMS_DOC</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- CONCESSÕES -->
+                    <section class="bg-white overflow-hidden border border-gray-300 rounded-xl">
+                        <div class="bg-green-200 text-green-800 rounded-t-xl p-4">
+                            <h2 class="text-xl font-bold">CONCESSÕES</h2>
+                        </div>
+                        <div class="p-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-semibold mb-3 text-gray-700">BENEFÍCIOS CONCEDIDOS</h3>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">VALE ALIMENTAÇÃO</span>
+                                            <span class="text-gray-800 font-medium">R$ 1.000,00</span>
+                                        </div>
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">INSALUBRIDADE</span>
+                                            <span class="text-gray-800 font-medium">R$ 322,07</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-3 text-gray-700">HORAS EXTRAS</h3>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">HORAS 50%</span>
+                                            <span class="text-gray-800 font-medium">PAG_AHORAS 30</span>
+                                        </div>
+                                        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 rounded border border-gray-200">
+                                            <span class="text-gray-600">HORAS 100%</span>
+                                            <span class="text-gray-800 font-medium">PAG_AHORAS 100</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- HORAS -->
+                    <section class="bg-white overflow-hidden border border-gray-300 rounded-xl">
+                        <div class="bg-green-200 text-green-800 rounded-t-xl p-4">
+                            <h2 class="text-xl font-bold">HORAS</h2>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-4">
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">HORAS 50%</label>
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[80px]">Coord1 50%</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-16 focus:outline-none focus:ring-2 focus:ring-green-500" value="">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[80px]">Coord2 50%</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-16 focus:outline-none focus:ring-2 focus:ring-green-500" value="">
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">HORAS 100%</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-20 focus:outline-none focus:ring-2 focus:ring-green-500" value="">
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">HORAS PLANEJADAS</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-20 focus:outline-none focus:ring-2 focus:ring-green-500" value="160">
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">TOTAL HORAS EXTRAS</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-20 focus:outline-none focus:ring-2 focus:ring-green-500" value="">
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">PERÍODO ADQUIRIDO</label>
+                                    <input type="text" class="border border-gray-300 rounded px-2 py-1 w-32 bg-gray-100" value="(FERIAS VENCIDAS)" disabled>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-16 focus:outline-none focus:ring-2 focus:ring-green-500" value="">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[80px]">PAG HORAS</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-16 focus:outline-none focus:ring-2 focus:ring-green-500" value="30">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- LICENÇAS -->
+                    <section class="bg-white overflow-hidden border border-gray-300 rounded-xl">
+                        <div class="bg-green-200 text-green-800 rounded-t-xl p-4">
+                            <h2 class="text-xl font-bold">LICENÇAS/AFASTAMENTO</h2>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="licenca1" class="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                                    <label for="licenca1" class="text-sm text-gray-700">LICENÇA POR MOTIVO DE DOENÇA</label>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="licenca2" class="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                                    <label for="licenca2" class="text-sm text-gray-700">LICENÇA MÉDICA</label>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="licenca3" class="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                                    <label for="licenca3" class="text-sm text-gray-700">LICENÇA PRÊMIO</label>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="licenca4" class="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                                    <label for="licenca4" class="text-sm text-gray-700">LICENÇA CAPACITAÇÃO</label>
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[60px]">INÍCIO</label>
+                                    <input type="date" class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[60px]">FIM</label>
+                                    <input type="date" class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[60px]">PERÍODO</label>
+                                    <input type="text" class="border border-gray-300 rounded px-2 py-1 w-32 focus:outline-none focus:ring-2 focus:ring-green-500" value="QT PER FER VEN">
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-16 focus:outline-none focus:ring-2 focus:ring-green-500" value="">
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[60px]">OBSERVAÇÕES</label>
+                                    <textarea class="border border-gray-300 rounded px-2 py-1 w-48 h-12 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Observações"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- FOLHA DE PAGAMENTO -->
+                    <section class="bg-white overflow-hidden border border-gray-300 rounded-xl">
+                        <div class="bg-green-200 text-green-800 rounded-t-xl p-4">
+                            <h2 class="text-xl font-bold">FOLHA DE PAGAMENTO</h2>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-4">
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">SALÁRIO BASE</label>
+                                    <input type="text" class="border border-gray-300 rounded px-2 py-1 w-20 bg-gray-100" value="R$ 1.630,36" disabled>
+                                    <input type="checkbox" class="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">CÁLCULO HORAS</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-20 focus:outline-none focus:ring-2 focus:ring-green-500" value="">
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">SALÁRIO HORAS</label>
+                                    <input type="text" class="border border-gray-300 rounded px-2 py-1 w-20 bg-gray-100" value="R$ 1.630,36" disabled>
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">CÁLCULO BASE</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-20 focus:outline-none focus:ring-2 focus:ring-green-500" value="">
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[140px]">INSALUBRIDADE (20%)</label>
+                                    <input type="number" class="border border-gray-300 rounded px-2 py-1 w-16 focus:outline-none focus:ring-2 focus:ring-green-500" value="20">
+                                    <input type="text" class="border border-gray-300 rounded px-2 py-1 w-20 bg-gray-100 ml-1" value="R$ 322,07" disabled>
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[140px]">VALE ALIMENTAÇÃO NAC.</label>
+                                    <input type="text" class="border border-gray-300 rounded px-2 py-1 w-20 bg-gray-100" value="R$ 1.000,00" disabled>
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[140px]">GRATIFICAÇÃO NATALINA SUP.</label>
+                                    <input type="text" class="border border-gray-300 rounded px-2 py-1 w-20 bg-gray-100" value="R$ 1.000,00" disabled>
+                                </div>
+                                <div class="flex items-end gap-3">
+                                    <label class="text-sm font-medium text-gray-700 min-w-[100px]">VALOR BRUTO</label>
+                                    <input type="text" class="border border-gray-300 rounded px-2 py-1 w-20 bg-gray-100" value="R$ 1.000,00" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Desktop footer -->
+        <footer class="hidden md:flex rounded-md bg-white flex items-center justify-center py-5">
+            <p>SisGep - SEMSA. Versão de Testes</p>
+        </footer>   
+
+        <!-- Mobile footer -->
+        <footer class="fixed bottom-0 z-99 w-full left-0 md:hidden rounded-md bg-white flex items-center justify-center py-5 gap-12">
+            <a href="./home.html" class="p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+
+            </a>
+            <a href="./integrated-managment.html" class="p-2 rounded-full bg-green-500 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
+                </svg>
+            </a>
+            <a href="./servers.html" class="p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                </svg>
+            </a>
+        </footer>   
+    </div>
+
+    <script>
+
+        function showOptions() {
+            const options = document.getElementsByClassName('cards');
+            
+            // Se você quer mostrar todos os elementos com a classe 'cards'
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove('hidden');
+            }
+            
+            // Ou se você quer mostrar apenas o primeiro elemento
+            // options[0].classList.remove('hidden');
+        }
+
+        // Script para adicionar interações adicionais
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('a[href=""]');
+            
+            cards.forEach(card => {
+                // Prevenir comportamento padrão dos links vazios
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Efeito de clique
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                    
+                    // Aqui você pode adicionar a navegação real
+                    console.log('Navegar para:', this.querySelector('h1').textContent);
+                });
+                
+                // Efeito de hover mais suave
+                card.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.3s ease';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
